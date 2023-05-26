@@ -2,7 +2,7 @@ clc,clear all
 
 %%%Dynamic pore collapse
 d=1e-9; %nanosecond
-alpha0=2;
+alpha0=1.2;
 
 alpha_star=1.66;
 
@@ -12,7 +12,7 @@ R=550e-6;
 % a0=R*nthroot((alpha0-alpha_star+1),3);
 % b0=R*nthroot(alpha0,3);
 
-a0=20e-6;
+a0=550e-6;
 rho=8.93e3; % density for SLG
 C=385; %specific heat for SLG
 Tm=1356; %Melting Temp
@@ -42,7 +42,7 @@ const=(d/(rho*C));
 
 
 %  Pcrit=(2*Y1/3)*log(alpha0/(alpha0-1)); 
- Pf=14.3*1e9; 
+ Pf=1*1e9; 
  
 %  P=[0:Prate*0.01:1*Prate];
 tau=0.25e-6;

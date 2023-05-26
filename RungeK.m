@@ -2,9 +2,9 @@ clc,clear all
 
 %%%Dynamic pore collapse
 d=1e-9; %nanosecond
-alpha0=2;
+alpha0=1.2;
 
-a0=20e-6;
+a0=550e-6;
 rho=8.93e3; % density for SLG
 C=385; %specific heat for SLG
 Tm=1356; %Melting Temp
@@ -27,7 +27,7 @@ T0=293; %Ambient Temperature
 
 % Y1=400e6;
 % 
- B=4239;
+%  B=4239;
 
 %   B=5765;
 
@@ -37,7 +37,7 @@ eta_m=10^(A+B/(Tm-273-TO));
 
 const=(d/(rho*C));
 
-Pf=14.3*1e9; 
+Pf=1*1e9; 
  
 tau=0.25e-6;
 
@@ -69,7 +69,7 @@ rdotbyr=zeros(length(P),length(r0));
 T(1,:)=T0;
 
  
-for k=1:100
+for k=1:length(time)
 
 
   %a loop%
@@ -148,9 +148,16 @@ end
 
 end
 
+
+
+
+
+
+
+
 % 
-plot(time(1:(k+1))/1e-6,alpha(1:(k+1)),'r*','LineWidth',3)
-xlabel('Time (microseconds)')
+plot(time(1:(k))/1e-9,alpha(1:(k)),'r*-','LineWidth',3)
+xlabel('Time (nanoseconds)')
 ylabel('Distension \alpha')
 ax=gca;
 ax.FontSize = 16.0;
